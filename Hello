@@ -1,1 +1,12 @@
-//hello
+
+•	Town (Citizens Vector)
+  o	Citizens – user will input a set number of people that get sick
+  o	ER
+     	Citizens Queue – 3 queues for each sickness priority
+      	Responder
+        •	Doctor
+        •	Nurse – will only search 1-10 queue
+•	Main
+  o	7x24x60 minutes (in ticks)
+Ask Dr. Bell about
+	“Display a Plot”
