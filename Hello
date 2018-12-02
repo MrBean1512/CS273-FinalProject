@@ -3,7 +3,7 @@
   o	Citizens – user will input a set number of people that get sick
   o	ER
      	Citizens Queue – 3 queues for each sickness priority
-      	Caretaker
+      	Caretaker (abstract of doctor and nurse)
         •	Doctor
         •	Nurse – will only search 1-10 queue
 •	Main
