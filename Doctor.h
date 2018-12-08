@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 
 #include "Citizen.h"
 #include "Caregiver.h"
@@ -9,8 +10,11 @@
 
 class Doctor : public Caregiver {
 private:
-
+	std::priority_queue<Citizen*> *patientQueue10;
+	std::priority_queue<Citizen*> *patientQueue20;
 public:
+	Doctor(std::vector<Citizen*>* Population, std::priority_queue<Citizen*>* patientQueue20, std::priority_queue<Citizen*>* patientQueue10);
+
 	void update();
 
 };

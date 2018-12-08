@@ -10,15 +10,18 @@
 class Citizen {
 private:
 	std::string name;
-	int numVisits;
-	int sicknessSeverity;
 	std::vector<Record> records;
+	int sicknessSeverity;
 public:
 	Citizen(std::string Name);
-	int getNumVisits();
 	bool operator<(const Citizen &other) const {
 		return sicknessSeverity < other.sicknessSeverity;
 	}
+
+	int getSicknessSeverity();
+	void setSicknessSeverity(int s);
+	void decrementSicknessSeverity();
+
 };
 
 #endif

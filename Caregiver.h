@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 
 #include "Citizen.h"
 
@@ -8,11 +9,18 @@
 
 class Caregiver {
 private:
-	
-public:
-	std::queue<Citizen *> curPatient;
 	int treatmentTime;
+
+public:
+
 	virtual void update() = 0;
+	std::queue<Citizen *> curPatient;	//public so that subclasses have access to it
+	std::vector<Citizen*>* population;
+
+	int getTreatmentTime();
+	void setTreatmentTime(int t);
+	void decrementTreatmentTime();
+	
 
 };
 

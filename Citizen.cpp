@@ -6,7 +6,17 @@ Citizen::Citizen(std::string Name)
 
 }
 
-int Citizen::getNumVisits()
+int Citizen::getSicknessSeverity()
 {
-	return numVisits;
+	return sicknessSeverity;
+}
+
+void Citizen::setSicknessSeverity(int s)
+{
+	sicknessSeverity = s;
+}
+
+void Citizen::decrementSicknessSeverity()
+{
+	sicknessSeverity--;
 }

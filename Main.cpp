@@ -16,7 +16,6 @@ int main()
 		exit(1);
 	}
 	Town myTown;
-	ER myER;
 	while (myfile)
 	{
 		std::string sinput;
@@ -24,8 +23,8 @@ int main()
 		//std::cout << sinput << std::endl;
 		myTown.population.push_back(Citizen(sinput));
 	}
-
-	for (int i = 0; i < runtTime; ++i)
+	int runtime = 10080;
+	for (int i = 0; i < runtime; ++i)
 	{
 		for (int i = 0; i < myER.caregivers.size; )
 	}
