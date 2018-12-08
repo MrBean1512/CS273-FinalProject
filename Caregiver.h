@@ -8,16 +8,12 @@
 
 class Caregiver {
 private:
-	Citizen *curPatient;
-	int treatmentTime;
-
-	friend class Doctor;
-	friend class Nurse;
-
+	
 public:
+	std::queue<Citizen *> curPatient;
+	int treatmentTime;
 	virtual void update() = 0;
-	Citizen getCurPatient() { return (*curPatient); }
-	int getTreatmentTime() { return (treatmentTime); }
+
 };
 
 #endif
