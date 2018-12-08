@@ -3,7 +3,7 @@
 
 void Doctor::update()
 {
-	if (getCurPatient == nullptr) {
+	if (curPatient == nullptr) {
 		if (treatmentTime > 1)
 			treatmentTime--;
 		else {

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <map>
 
 #include "Caregiver.h"
 #include "Citizen.h"
@@ -9,10 +10,9 @@
 
 class ER {
 private:
-	std::queue<Citizen> patientQueue10;
-	std::queue<Citizen> patientQueue15;
-	std::queue<Citizen> patientQueue20;
-	std::vector<Caregiver> Caregivers;
+	std::priority_queue<Citizen*> patientQueue;
+
+	std::vector<Caregiver> caregivers;
 
 	friend class Caregiver;
 
