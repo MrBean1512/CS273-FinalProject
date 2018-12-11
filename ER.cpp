@@ -7,9 +7,6 @@ ER::ER()
 ER::ER(int numDoctor, int numNurse)
 {
 
-	std::priority_queue<Citizen*> patientQueue10;
-	std::priority_queue<Citizen*> patientQueue20;
-
 	// set the patient Q's
 	setPatientQueue10(patientQueue10);
 	setPatientQueue20(patientQueue20);

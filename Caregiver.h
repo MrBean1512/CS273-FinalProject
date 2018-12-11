@@ -18,7 +18,7 @@ public:
 	//std::map<Citizen*, int>* Record;
 	Stats* stats;
 
-	virtual void update(int i) = 0;
+	virtual void update(int *i) = 0;
 
 	int getTreatmentTime();
 	void setTreatmentTime(int t);

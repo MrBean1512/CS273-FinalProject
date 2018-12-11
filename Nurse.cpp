@@ -9,7 +9,7 @@ Nurse::Nurse(//std::map<Citizen*, int>* record,
 	this->patientQueue1 = patientQueue10;
 }
 
-void Nurse::update(int i)
+void Nurse::update(int *i)
 {
 	if (curPatient.size() > 0) {
 		if (getTreatmentTime() > 1)	//more time remains
@@ -18,7 +18,7 @@ void Nurse::update(int i)
 			//put patient back into citizens vector
 			curPatient.front()->setSicknessSeverity(0);
 			curPatient.front()->flag = false;
-			curPatient.front()->dismissal_time = i;
+			curPatient.front()->dismissal_time = *i;
 			//curPatient.front()->records.push_back(new Record(curPatient.front()->getSicknessSeverity, curPatient.front()->arrival_time, curPatient.front()->dismissal_time));
 			stats->update_report(curPatient.front());
 			curPatient.pop();

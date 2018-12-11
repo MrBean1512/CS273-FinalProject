@@ -14,14 +14,14 @@ Doctor::Doctor(//std::map<Citizen*, int>* record,
 	//setPQ2(*patientQueue2);
 }
 
-void Doctor::update(int i)
+void Doctor::update(int *i)
 {
 	if (curPatient.size() > 0) {
 		if (getTreatmentTime() > 1)	//more time remains
 			decrementTreatmentTime();
 		else {	//they are done being treated
 			curPatient.front()->flag = false;
-			curPatient.front()->dismissal_time=i;
+			curPatient.front()->dismissal_time=*i;
 			stats->update_report(curPatient.front());
 			//curPatient.front()->records.push_back(new Record(curPatient.front()->getSicknessSeverity, curPatient.front()->arrival_time, i));
 			curPatient.front()->setSicknessSeverity(0);

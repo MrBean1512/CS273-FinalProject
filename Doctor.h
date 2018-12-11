@@ -19,7 +19,7 @@ public:
 		std::priority_queue<Citizen*>* PatientQueue10, 
 		Stats* rep);
 
-	void update(int i);
+	void update(int *i);
 
 	void setPQ1(std::priority_queue<Citizen*> pq1) {
 		this->patientQueue1 = &pq1;

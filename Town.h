@@ -13,19 +13,19 @@ private:
 	int numDoc;
 	int numNurse;
 
-	ER testER;
+	//ER testER;
 public:
 	Town(int sickRate, int numDoctor, int numNurse);
 
 	//ER *myER = new ER(numDoc, numNurse);
-	ER myER;
+	ER *myER;
 	std::vector<Citizen*> population;
 
-	void update(int i);
+	void update(int *i);
 
-	void setER(ER emRoom) {
-		this->testER = emRoom;
-	}
+	//void setER(ER emRoom) {
+	//	this->testER = emRoom;
+	//}
 };
 
 #endif

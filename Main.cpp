@@ -51,15 +51,15 @@ int main()
 	srand(time(0));
 	for (int i = 0; i < runtime; ++i)
 	{
-		myTown.update(i);
-		for (int i = 0; i < myTown.myER.caregivers.size(); i++)
-			myTown.myER.caregivers[i]->update(i);
+		myTown.update(&i);
+		for (int j = 0; j < myTown.myER->caregivers.size(); j++)
+			myTown.myER->caregivers[j]->update(&i);
 	}
 
 	
 
 	//output the report
-	myTown.myER.stats.print_report();
+	myTown.myER->stats.print_report();
 
 	cout << "finished" << endl;
 

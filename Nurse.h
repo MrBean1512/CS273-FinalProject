@@ -14,7 +14,7 @@ public:
 		std::priority_queue<Citizen*>* patientQueue10, 
 		Stats* stat);
 
-	void update(int i);
+	void update(int *i);
 };
 
 #endif
