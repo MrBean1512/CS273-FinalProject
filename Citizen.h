@@ -23,7 +23,8 @@ public:
 	int arrival_time=0;
 	int dismissal_time=0;
 
-	bool operator<(const Citizen &other) const {	//for the priority queues
+	bool operator<(const Citizen &other) const 
+	{	//for the priority queues
 		return sicknessSeverity < other.sicknessSeverity;
 	}
 
