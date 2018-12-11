@@ -8,10 +8,13 @@
 class Nurse : public Caregiver {
 private:
 	std::priority_queue<Citizen*> *patientQueue10;
-public:
-	Nurse(std::vector<Citizen*>* Population, std::priority_queue<Citizen*>* patientQueue10);
 
-	void update();
+public:
+	Nurse(//std::map<Citizen*, int>* record, 
+		std::priority_queue<Citizen*>* patientQueue10, 
+		Stats* stat);
+
+	void update(int i);
 };
 
 #endif

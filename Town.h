@@ -9,12 +9,14 @@
 
 class Town {
 private:
-	
+	int sickRate=0;
 public:
-	Town(int numDoctor, int numNurse);
+	Town(int sickRate, int numDoctor, int numNurse);
 
+	ER myER;
 	std::vector<Citizen*> population;
-	void update(int prob);
+
+	void update(int i);
 };
 
 #endif

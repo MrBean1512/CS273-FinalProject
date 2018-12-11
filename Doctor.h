@@ -12,11 +12,14 @@ class Doctor : public Caregiver {
 private:
 	std::priority_queue<Citizen*> *patientQueue10;
 	std::priority_queue<Citizen*> *patientQueue20;
+
 public:
-	Doctor(std::vector<Citizen*>* Population, std::priority_queue<Citizen*>* patientQueue20, std::priority_queue<Citizen*>* patientQueue10);
+	Doctor(//std::map<Citizen*, int>* record, 
+		std::priority_queue<Citizen*>* patientQueue20, 
+		std::priority_queue<Citizen*>* patientQueue10, 
+		Stats* rep);
 
-	void update();
-
+	void update(int i);
 };
 
 #endif

@@ -9,12 +9,21 @@
 
 class Citizen {
 private:
-	std::string name;
-	std::vector<Record> records;
 	int sicknessSeverity;
+
 public:
 	Citizen(std::string Name);
-	bool operator<(const Citizen &other) const {
+
+	bool flag;	//tells whether or not a citizen is currently sick
+
+	std::vector<Record*> records;
+
+	std::string name;
+	int numVisits=0;
+	int arrival_time=0;
+	int dismissal_time=0;
+
+	bool operator<(const Citizen &other) const {	//for the priority queues
 		return sicknessSeverity < other.sicknessSeverity;
 	}
 

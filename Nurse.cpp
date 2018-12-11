@@ -1,11 +1,15 @@
 #include "Nurse.h"
 
-Nurse::Nurse(std::vector<Citizen*>* Population, std::priority_queue<Citizen*>* patientQueue10)
+Nurse::Nurse(//std::map<Citizen*, int>* record, 
+	std::priority_queue<Citizen*>* patientQueue10, 
+	Stats* stat)
 {
-	population = Population;
+	stats = stat;
+	//Record = record;
+	this->patientQueue10 = patientQueue10;
 }
 
-void Nurse::update()
+void Nurse::update(int i)
 {
 	if (curPatient.size() > 0) {
 		if (getTreatmentTime() > 1)	//more time remains
@@ -13,13 +17,18 @@ void Nurse::update()
 		else {	//they are done being treated
 			//put patient back into citizens vector
 			curPatient.front()->setSicknessSeverity(0);
-			population->push_back(curPatient.front());
+			curPatient.front()->flag = false;
+			curPatient.front()->dismissal_time = i;
+			//curPatient.front()->records.push_back(new Record(curPatient.front()->getSicknessSeverity, curPatient.front()->arrival_time, curPatient.front()->dismissal_time));
+			stats->update_report(curPatient.front());
 			curPatient.pop();
+
 		}
 	}
 	else {	//retrieve the next patient and assign them a random treatmentTime ranging 1-20
 		if (patientQueue10->size() > 0) {//search this queue first
 			curPatient.push(patientQueue10->top());
+			//Record->insert(std::pair<Citizen*, int>(patientQueue10->top(), patientQueue10->top()->getSicknessSeverity()));
 			patientQueue10->pop();
 		}
 		else {
