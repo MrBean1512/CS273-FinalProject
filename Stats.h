@@ -1,4 +1,5 @@
 #include <map>
+#include <vector>
 
 #include "Citizen.h"
 #include "Record.h"
@@ -13,8 +14,10 @@ private:
 	int num_wait_time=0;
 	int num_total_time=0;
 
+	std::vector<Citizen*> *population;
+
 public:
-	Stats() : num_patient(0), num_wait_time(0), num_total_time(0){}
+	Stats();
 	std::map<int, Citizen*> records;
 
 	void update_report(Citizen *citizen);

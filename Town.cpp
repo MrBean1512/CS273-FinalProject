@@ -5,15 +5,23 @@
 Town::Town(int sickRate, int numDoctor, int numNurse)
 {
 	this->sickRate = sickRate;
-	ER *thisER = new ER(numDoctor, numNurse);
-	myER = *thisER;
+	numDoc = numDoctor;
+	this->numNurse = numNurse;
+
+	ER newER(numDoctor, numNurse);
+	myER = newER;
+	// some other value
+	//ER *thisER = new ER(numDoctor, numNurse);//
+	//this->myER = ER(numDoctor, numNurse);
+	
 }
 
 void Town::update(int i)
 {
-	srand(time(0));	//consider pasing i into rand
+	//srand(time(0));	//consider pasing i into rand
+	std::cout << "The address of pt10 is " << &myER.getPatientQueue10() << ", and the address of pq20 is " << &myER.getPatientQueue20() << std::endl;
+
 	bool strike = (rand() % 60 < sickRate);	//does someone get sick?
-	strike = true; //remove this
 	if (strike == false)
 		return;
 
@@ -31,6 +39,7 @@ void Town::update(int i)
 	int who = (rand() % population.size());	//choose who gets sick
 	if (population[who]->flag == true)
 		return;
+	population[who]->setSicknessSeverity(sick);
 	if (sick <= 10 && sick > 0) {
 		myER.patientQueue10.push(population[who]);
 	}

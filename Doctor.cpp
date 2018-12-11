@@ -8,8 +8,10 @@ Doctor::Doctor(//std::map<Citizen*, int>* record,
 {
 	stats = stat;
 	//Record = record;
-	this->patientQueue20 = patientQueue20;
-	this->patientQueue10 = patientQueue10;
+	this->patientQueue2 = patientQueue20;
+	this->patientQueue1 = patientQueue10;
+	//setPQ1(*patientQueue1);
+	//setPQ2(*patientQueue2);
 }
 
 void Doctor::update(int i)
@@ -28,17 +30,17 @@ void Doctor::update(int i)
 		}
 	}
 	else {	//retrieve the next patient and assign them a random treatmentTime ranging 1-20
-		if (patientQueue20->size() > 0) {//search this queue first
-			curPatient.push(patientQueue20->top());
+		if (patientQueue2->size() > 0) {//search this queue first
+			curPatient.push(patientQueue2->top());
 			//Record->insert ( std::pair<Citizen*, int> (patientQueue20->top(), patientQueue20->top()->getSicknessSeverity()));
-			patientQueue20->pop();
+			patientQueue2->pop();
 			setTreatmentTime((rand() % 20)+1);
 
 		}
-		else if (patientQueue10->size() > 0) {//then try this queue
-			curPatient.push(patientQueue10->top());
+		else if (patientQueue1->size() > 0) {//then try this queue
+			curPatient.push(patientQueue1->top());
 			//Record->insert(std::pair<Citizen*, int>(patientQueue10->top(), patientQueue10->top()->getSicknessSeverity()));
-			patientQueue10->pop();
+			patientQueue1->pop();
 		}
 		else {
 			//if there is no one in line, do nothing

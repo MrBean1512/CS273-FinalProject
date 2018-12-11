@@ -22,9 +22,9 @@ public:
 	int numVisits=0;
 	int arrival_time=0;
 	int dismissal_time=0;
+	int it;
 
-	bool operator<(const Citizen &other) const 
-	{	//for the priority queues
+	bool operator<(const Citizen &other) const {	//for the priority queues
 		return sicknessSeverity < other.sicknessSeverity;
 	}
 

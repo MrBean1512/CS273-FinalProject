@@ -6,7 +6,7 @@ Nurse::Nurse(//std::map<Citizen*, int>* record,
 {
 	stats = stat;
 	//Record = record;
-	this->patientQueue10 = patientQueue10;
+	this->patientQueue1 = patientQueue10;
 }
 
 void Nurse::update(int i)
@@ -26,10 +26,10 @@ void Nurse::update(int i)
 		}
 	}
 	else {	//retrieve the next patient and assign them a random treatmentTime ranging 1-20
-		if (patientQueue10->size() > 0) {//search this queue first
-			curPatient.push(patientQueue10->top());
+		if (patientQueue1->size() > 0) {//search this queue first
+			curPatient.push(patientQueue1->top());
 			//Record->insert(std::pair<Citizen*, int>(patientQueue10->top(), patientQueue10->top()->getSicknessSeverity()));
-			patientQueue10->pop();
+			patientQueue1->pop();
 		}
 		else {
 			//if there is no one in line, do nothing

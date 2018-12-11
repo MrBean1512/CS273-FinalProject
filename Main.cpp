@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <time.h>
 
 #include "ER.h"
 #include "Citizen.h"
@@ -33,17 +34,21 @@ int main()
 	//set everything up
 	cout << "\nLoading files..." << endl;
 	Town myTown(sickRate, numDoctor, numNurse);
+	int assign = 0;
 	while (myfile)	//read txt file
 	{
 		std::string sinput;
 		myfile >> sinput;
 		myTown.population.push_back(new Citizen(sinput));
+		myTown.population.back()->it = assign;
+		assign++;
 	}
 
 	//run the simulation
 	cout << "Done." << endl;
 	int runtime = 10080;	//60x24x7
 	cout << "Running simulation for " << runtime << " ticks..." << endl;
+	srand(time(0));
 	for (int i = 0; i < runtime; ++i)
 	{
 		myTown.update(i);
@@ -51,8 +56,10 @@ int main()
 			myTown.myER.caregivers[i]->update(i);
 	}
 
+	
+
 	//output the report
-	//don't forget to track statistics
+	myTown.myER.stats.print_report();
 
 	cout << "finished" << endl;
 
