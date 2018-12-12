@@ -11,6 +11,8 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+//consider having functions to measure runtime and then calculate it based on different times (ie what's the difference between 10080 and 1008000)
+
 int main()
 {
 	std::ifstream myfile("Residents.txt");	//check if the txt file exists, if it doesn't terminate the program;
@@ -46,7 +48,7 @@ int main()
 
 	//run the simulation
 	cout << "Done." << endl;
-	int runtime = 10080;	//60x24x7
+	int runtime = 1008000;	//60x24x7
 	cout << "Running simulation for " << runtime << " ticks..." << endl;
 	srand(time(0));
 	for (int i = 0; i < runtime; ++i)
