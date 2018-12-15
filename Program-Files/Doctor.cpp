@@ -15,7 +15,7 @@ void Doctor::update(int *i)
 	if (curPatient.size() > 0) {	//if the doctor already is working on someone
 		if (getTreatmentTime() > 1)	//if more time remains
 			decrementTreatmentTime();
-		else {	//if no more time remains then they are done being treated
+		else {	//if no more time remains then they are done being treated, remove them from the doctor queue and update the citizen flag and add a report
 			curPatient.front()->flag = false;
 			curPatient.front()->dismissal_time=*i;
 			stats->update_report(curPatient.front());
@@ -34,6 +34,7 @@ void Doctor::update(int *i)
 		else if (patientQueue1->size() > 0) {	//then try this queue
 			curPatient.push(patientQueue1->top());
 			patientQueue1->pop();
+			setTreatmentTime((rand() % 20) + 1);
 		}
 		else {
 			//if there is no one in line, do nothing
