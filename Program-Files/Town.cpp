@@ -9,7 +9,7 @@ Town::Town(int sickRate, int numDoctor, int numNurse)
 	//I kept the commented code below to show how many different things we tried in order to have the most efficient code
 	//the uncommented code at the end was the only thing that worked even though they are all very similar
 	//each of the other options created entirely different ER objects that could never be accessed
-	//this tiny little bit alone took 6 hours to figure out
+	//this was the root of one single problem that took 12 hours to figure out
 
 	//ER newER(numDoctor, numNurse);
 	//myER = newER;

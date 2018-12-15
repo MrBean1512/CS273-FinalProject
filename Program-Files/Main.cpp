@@ -57,7 +57,7 @@ int main()
 
 	//run the simulation
 	cout << "Done." << endl;
-	int runtime = 1008000;	//60x24x7
+	int runtime = 10080;	//60x24x7	//consider puting 1008000 (100 weeks) here instead
 	cout << "Running simulation for " << runtime << " ticks..." << endl;
 	srand(time(0));
 	for (int i = 0; i < runtime; ++i)
